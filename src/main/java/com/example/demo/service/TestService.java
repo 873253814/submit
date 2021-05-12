@@ -14,6 +14,10 @@ public class TestService {
 
     public static TestService instance;
 
+    private String testName;
+
+    public boolean show;
+
     private TestService() {
 
     }
@@ -33,4 +37,11 @@ public class TestService {
         System.out.println("test");
     }
 
+    public String getTestName() {
+        return testName;
+    }
+
+    public void setTestName(String testName) {
+        this.testName = testName;
+    }
 }

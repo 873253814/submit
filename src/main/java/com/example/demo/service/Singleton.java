@@ -3,9 +3,9 @@ package com.example.demo.service;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Singleton {
-    private AtomicReference<Singleton> singletonAtomicReference = new AtomicReference<>();
+    private static AtomicReference<Singleton> singletonAtomicReference = new AtomicReference<>();
 
-    public Singleton getInstance() {
+    public static Singleton getInstance() {
         for (;;) {
             Singleton singleton = singletonAtomicReference.get();
             if (singleton != null) {
@@ -16,9 +16,14 @@ public class Singleton {
                 return singleton;
             }
         }
+
     }
 
     private Singleton() {
 
+    }
+
+    public static void main(String[] args) {
+       Singleton.getInstance();
     }
 }
